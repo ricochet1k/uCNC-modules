@@ -402,7 +402,7 @@ void tmc_set_current(tmc_driver_t *driver, tmc_driver_setting_t *settings)
 	IHOLD_IRUN_t ihold_irun = driver->reg.ihold_irun;
 	ihold_irun.irun = currentsense;
 	ihold_irun.ihold = (uint8_t)(currentsense * settings->ihold_mul);
-	ihold_irun.iholddelay = (uint8_t)(settings->ihold_mul);
+	// ihold_irun.iholddelay = (uint8_t)(settings->ihold_mul);
 	tmc_write_register(driver, IHOLD_IRUN, ihold_irun.sr);
 }
 
